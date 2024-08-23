@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../../components/admin/Navbar";
-import Sidebar from "../../components/admin/Sidebar";
+import Navbar from "../../components/admin/Navbar/Navbar";
+import Sidebar from "../../components/admin/Sidebar/Sidebar";
 const AdminIndexPage = () => {
   const [open, setOpen] = React.useState(true);
 
