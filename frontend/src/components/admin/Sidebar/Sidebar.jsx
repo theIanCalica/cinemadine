@@ -1,5 +1,8 @@
 import React from "react";
 import "./Sidebar.scss";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
+import MovieCreationOutlinedIcon from "@mui/icons-material/MovieCreationOutlined";
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -10,16 +13,19 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           <li>
+            <DashboardIcon />
             <span>Dashboard</span>
           </li>
           <li>
-            <span>Dashboard</span>
+            <MovieCreationOutlinedIcon />
+            <span>Movies</span>
           </li>
           <li>
-            <span>Dashboard</span>
+            <GroupOutlinedIcon />
+            <span>Users</span>
           </li>
           <li>
-            <span>Dashboard</span>
+            <span>Foods</span>
           </li>
         </ul>
       </div>
