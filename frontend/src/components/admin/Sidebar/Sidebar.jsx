@@ -8,6 +8,9 @@ import FastfoodIcon from "@mui/icons-material/Fastfood";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import EmailIcon from "@mui/icons-material/Email";
 import ForumIcon from "@mui/icons-material/Forum";
+import Tooltip from "@mui/material/Tooltip";
+import Zoom from "@mui/material/Zoom";
+import SettingsIcon from "@mui/icons-material/Settings";
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -60,7 +63,19 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-      <div className="bottom">color</div>
+      <div className="bottom">
+        <Tooltip title="Settings" TransitionComponent={Zoom} arrow>
+          <div className="settings">
+            <SettingsIcon />
+          </div>
+        </Tooltip>
+
+        <Tooltip title="Language" TransitionComponent={Zoom} arrow>
+          <div className="language">
+            <img src="" alt="" />
+          </div>
+        </Tooltip>
+      </div>
     </div>
   );
 };
