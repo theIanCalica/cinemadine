@@ -10,10 +10,10 @@ const AdminIndexPage = () => {
       <div className="homeContainer">
         <Navbar />
         <div className="widgets">
-          <Widget />
-          <Widget />
-          <Widget />
-          <Widget />
+          <Widget type="User" />
+          <Widget type="Order" />
+          <Widget type="Booking" />
+          <Widget type="Earnings" />
         </div>
         Container
       </div>

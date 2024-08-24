@@ -34,6 +34,20 @@
       display: flex;
       align-items: center;
       font-size: 14px;
+
+      &.positive{
+        color: green;
+      }
+ 
+      &.negative{
+        color: red;
+      }
+    }
+
+    .icon{
+      font-size: 30px;
+      padding: 5px;
+      align-self: flex-end;
     }
   }
 }
