@@ -6,6 +6,7 @@ import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlin
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
+import "./Navbar.scss";
 const Navbar = () => {
   return (
     <div className="navbar">
@@ -21,23 +22,28 @@ const Navbar = () => {
         </div>
         <div className="items">
           <div className="item">
-            <LanguageOutlinedIcon />
+            <LanguageOutlinedIcon className="icon" />
             English
           </div>
           <div className="item">
-            <DarkModeOutlinedIcon />
+            <DarkModeOutlinedIcon className="icon" />
           </div>
           <div className="item">
-            <FullscreenExitOutlinedIcon />
+            <FullscreenExitOutlinedIcon className="icon" />
           </div>
           <div className="item">
-            <NotificationsNoneOutlinedIcon />
+            <NotificationsNoneOutlinedIcon className="icon" />
+            <div className="counter">1</div>
           </div>
           <div className="item">
-            <ChatBubbleOutlineOutlinedIcon />
+            <ChatBubbleOutlineOutlinedIcon className="icon" />
+            <div className="counter">1</div>
           </div>
           <div className="item">
-            <ListOutlinedIcon />
+            <ListOutlinedIcon className="icon" />
+          </div>
+          <div className="item">
+            <img src="/images/ian.jpg" alt="Profile pic" className="avatar" />
           </div>
         </div>
       </div>
