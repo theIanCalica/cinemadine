@@ -11,6 +11,11 @@ import ForumIcon from "@mui/icons-material/Forum";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import SettingsIcon from "@mui/icons-material/Settings";
+import LocalActivityIcon from "@mui/icons-material/LocalActivity";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import DescriptionIcon from "@mui/icons-material/Description";
+import ArticleIcon from "@mui/icons-material/Article";
+import NotesIcon from "@mui/icons-material/Notes";
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -37,13 +42,32 @@ const Sidebar = () => {
             <span>Movies</span>
           </li>
           <li>
+            <LocalActivityIcon className="icon" />
+            <span>Bookings</span>
+          </li>
+          <li>
             <FastfoodIcon className="icon" />
             <span>Foods</span>
           </li>
           <li>
-            <MovieCreationOutlinedIcon className="icon" />
-            <span>Food Orders</span>
+            <CreditCardIcon className="icon" />
+            <span>Orders</span>
           </li>
+
+          <p className="title">OTHERS</p>
+          <li>
+            <ArticleIcon className="icon" />
+            <span>Articles</span>
+          </li>
+          <li>
+            <DescriptionIcon className="icon" />
+            <span>Reports</span>
+          </li>
+          <li>
+            <NotesIcon className="icon" />
+            <span>Logs</span>
+          </li>
+
           <p className="title">USER</p>
           <li>
             <AccountCircleIcon className="icon" />
