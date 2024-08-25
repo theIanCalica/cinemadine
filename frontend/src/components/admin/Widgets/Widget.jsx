@@ -3,12 +3,13 @@ import "./Widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-
+import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import ConfirmationNumberOutlinedIcon from "@mui/icons-material/ConfirmationNumberOutlined";
 const Widget = ({ type }) => {
   let data;
 
   switch (type) {
-    case "user":
+    case "User":
       data = {
         title: "USERS",
         isMoney: false,
@@ -16,7 +17,7 @@ const Widget = ({ type }) => {
         icon: <PersonOutlineOutlinedIcon className="icon" />,
       };
       break;
-    case "order":
+    case "Order":
       data = {
         title: "ORDERS",
         isMoney: false,
@@ -24,12 +25,20 @@ const Widget = ({ type }) => {
         icon: <ShoppingCartOutlinedIcon className="icon" />,
       };
       break;
-    case "order":
+    case "Booking":
       data = {
-        title: "ORDERS",
+        title: "BOOKINGS",
         isMoney: false,
-        link: "View all users",
-        icon: <PersonOutlineOutlinedIcon className="icon" />,
+        link: "View all bookings",
+        icon: <ConfirmationNumberOutlinedIcon className="icon" />,
+      };
+      break;
+    case "Earning":
+      data = {
+        title: "EARNINGS",
+        isMoney: false,
+        link: "View net earnings",
+        icon: <MonetizationOnOutlinedIcon className="icon" />,
       };
       break;
     default:
