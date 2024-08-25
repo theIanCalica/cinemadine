@@ -7,14 +7,20 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 import ConfirmationNumberOutlinedIcon from "@mui/icons-material/ConfirmationNumberOutlined";
 const Widget = ({ type }) => {
   let data;
-
+  const amount = 100;
+  const diff = 20;
   switch (type) {
     case "User":
       data = {
         title: "USERS",
         isMoney: false,
         link: "See all users",
-        icon: <PersonOutlineOutlinedIcon className="icon" />,
+        icon: (
+          <PersonOutlineOutlinedIcon
+            className="icon"
+            style={{ color: "crimson", backgroundColor: "rgba(255,0,0,0.2)" }}
+          />
+        ),
       };
       break;
     case "Order":
@@ -22,7 +28,15 @@ const Widget = ({ type }) => {
         title: "ORDERS",
         isMoney: false,
         link: "View all orders",
-        icon: <ShoppingCartOutlinedIcon className="icon" />,
+        icon: (
+          <ShoppingCartOutlinedIcon
+            className="icon"
+            style={{
+              color: "goldenrod",
+              backgroundColor: "rgba(218,165,32,0.2)",
+            }}
+          />
+        ),
       };
       break;
     case "Booking":
@@ -33,10 +47,10 @@ const Widget = ({ type }) => {
         icon: <ConfirmationNumberOutlinedIcon className="icon" />,
       };
       break;
-    case "Earning":
+    case "Earnings":
       data = {
         title: "EARNINGS",
-        isMoney: false,
+        isMoney: true,
         link: "View net earnings",
         icon: <MonetizationOnOutlinedIcon className="icon" />,
       };
@@ -44,20 +58,21 @@ const Widget = ({ type }) => {
     default:
       break;
   }
-  // Di pa tapos
   return (
     <div className="widget">
       <div className="left">
-        <span className="title"></span>
-        <span className="counter">213</span>
-        <span className="link">See more details</span>
+        <span className="title">{data.title}</span>
+        <span className="counter">
+          {data.isMoney && "₱"} {amount}
+        </span>
+        <span className="link">{data.link}</span>
       </div>
       <div className="right">
         <div className="percentage negative">
           <KeyboardArrowUpIcon />
-          20%
+          {diff} %
         </div>
-        <PersonOutlineOutlinedIcon className="icon" />
+        {data.icon}
       </div>
     </div>
   );
