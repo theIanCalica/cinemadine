@@ -1,10 +1,19 @@
+require("dotenv").config();
 const express = require("express");
-
+const mongoose = require("mongoose");
+const articleRoutes = require("./routes/articles");
 // express app
 const app = express();
 
-//listen for request
-
-app.listen(4000, () => {
-  console.log("listen 4000");
+// Middleware
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
 });
+
+app.listen(process.env.PORT, () => {
+  console.log("listening on port", process.env.PORT);
+});
+
+// Routes
+app.use(articleRoutes);
