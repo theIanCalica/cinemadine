@@ -7,7 +7,7 @@ import "@fontsource/roboto/700.css";
 
 import { CssBaseline } from "@mui/material";
 import SigninPage from "./pages/SigninPage";
-
+import HomePage from "./pages/customer/index/index";
 import AdminIndexPage from "./pages/admin/index/AdminIndexPage";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <Router>
       <CssBaseline />
       <Routes>
-        <Route path="/" element={<SigninPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/admin" element={<AdminIndexPage />} />
       </Routes>
     </Router>
