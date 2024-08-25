@@ -15,7 +15,7 @@ const AdminIndexPage = () => {
           <Widget type="Booking" />
           <Widget type="Earnings" />
         </div>
-        Container
+        <div className="charts"></div>
       </div>
     </div>
   );
