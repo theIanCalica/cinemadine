@@ -16,4 +16,4 @@ app.listen(process.env.PORT, () => {
 });
 
 // Routes
-app.use(articleRoutes);
+app.use("/api/articles", articleRoutes);
