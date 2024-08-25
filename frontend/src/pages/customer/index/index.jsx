@@ -7,6 +7,7 @@ const index = () => {
     <div className="home">
       <div className="homeContainer">
         <Navbar />
+        <img src="" alt="" />
       </div>
     </div>
   );
