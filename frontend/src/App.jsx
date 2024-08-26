@@ -9,7 +9,7 @@ import { CssBaseline } from "@mui/material";
 import SigninPage from "./pages/SigninPage";
 import HomePage from "./pages/customer/index/index";
 import AdminIndexPage from "./pages/admin/index/AdminIndexPage";
-
+import "./main.css";
 function App() {
   return (
     <Router>
