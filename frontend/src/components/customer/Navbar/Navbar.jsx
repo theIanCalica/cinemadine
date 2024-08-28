@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import { NavLink } from "react-router-dom";
+import SearchIcon from "@mui/icons-material/Search";
+import PersonIcon from "@mui/icons-material/Person";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -11,17 +14,42 @@ const Navbar = () => {
         <div className="md:hidden">
           <MenuIcon className="text-white text-sm" />
         </div>
-        <div className="flex justify-between items-center space-x-4">
-          <a href="#">Home</a>
-          <a href="#" className="text-white hover:text-gray-300">
+        <div
+          className={`${
+            isOpen ? "block" : "hidden"
+          } md:flex space-x-4 items-center`}
+        >
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-yellow-500" : "text-white"
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "text-yellow-500" : "text-white"
+            }
+          >
             About
-          </a>
+          </NavLink>
+
           <a href="#" className="text-white hover:text-gray-300">
             Services
           </a>
           <a href="#" className="text-white hover:text-gray-300">
             Contact
           </a>
+        </div>
+        <div className="flex justify-between items-center space-x-4 ">
+          <div>
+            <SearchIcon className="text-white" />
+          </div>
+          <div>
+            <PersonIcon className="text-white" />
+          </div>
         </div>
       </div>
     </nav>
