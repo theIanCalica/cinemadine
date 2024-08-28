@@ -36,19 +36,24 @@ const Navbar = () => {
             About
           </NavLink>
 
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "text-yellow-500" : "text-white"
+            }
+          >
+            Contact
+          </NavLink>
           <a href="#" className="text-white hover:text-gray-300">
             Services
-          </a>
-          <a href="#" className="text-white hover:text-gray-300">
-            Contact
           </a>
         </div>
         <div className="flex justify-between items-center space-x-4 ">
           <div>
-            <SearchIcon className="text-white" />
+            <SearchIcon className="text-white hover:text-yellow-300" />
           </div>
           <div>
-            <PersonIcon className="text-white" />
+            <PersonIcon className="text-white hover:text-yellow-300" />
           </div>
         </div>
       </div>
