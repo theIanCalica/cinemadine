@@ -1,35 +1,30 @@
-import React from "react";
-import "./Navbar.scss";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import React, { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="navbar">
-      <div className="wrapper">
-        <div className="logo">
-          <img src="" alt="" />
-          <span>Cinemax</span>
+    <nav className="bg-red-500">
+      <div className="flex container items-center justify-between mx-auto p-4">
+        <div>
+          <h1 className="text-white">Cinemadine</h1>
         </div>
-        <div className="items">
-          <a href="/" className="item">
-            Home
+        <div className="md:hidden">
+          <MenuIcon className="text-white text-sm" />
+        </div>
+        <div className="flex justify-between items-center space-x-4">
+          <a href="#">Home</a>
+          <a href="#" className="text-white hover:text-gray-300">
+            About
           </a>
-          <div className="item">
-            Movies
-            <KeyboardArrowDownIcon />
-          </div>
-          <div className="item">
-            Events
-            <KeyboardArrowDownIcon />
-          </div>
-          <div className="item">About Us</div>
-          <div className="item">
-            News
-            <KeyboardArrowDownIcon />
-          </div>
-          <div className="item">Contact</div>
+          <a href="#" className="text-white hover:text-gray-300">
+            Services
+          </a>
+          <a href="#" className="text-white hover:text-gray-300">
+            Contact
+          </a>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
