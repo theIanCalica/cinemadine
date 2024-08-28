@@ -61,7 +61,7 @@ const Navbar = () => {
             Contact
           </NavLink>
         </div>
-        <div className="flex justify-between items-center space-x-4 ">
+        <div className="flex justify-between items-center space-x-4  ">
           <div>
             <SearchIcon className="text-white hover:text-themeYellow" />
           </div>
