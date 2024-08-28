@@ -6,7 +6,7 @@ import PersonIcon from "@mui/icons-material/Person";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="bg-red-500">
+    <nav className="bg-blue-500">
       <div className="flex container items-center justify-between mx-auto p-4">
         <div>
           <h1 className="text-white">Cinemadine</h1>
@@ -22,7 +22,9 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-yellow-500" : "text-white"
+              `${
+                isActive ? "text-themeYellow" : "text-white"
+              } hover:text-themeYellow px-4 py-2 font-bold`
             }
           >
             Home
@@ -30,7 +32,9 @@ const Navbar = () => {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              isActive ? "text-yellow-500" : "text-white"
+              `${
+                isActive ? "text-themeYellow" : "text-white"
+              } hover:text-themeYellow px-4 py-2 font-bold`
             }
           >
             About
@@ -39,21 +43,30 @@ const Navbar = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive ? "text-yellow-500" : "text-white"
+              `${
+                isActive ? "text-themeYellow" : "text-white"
+              } hover:text-themeYellow px-4 py-2 font-bold`
+            }
+          >
+            News
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `${
+                isActive ? "text-themeYellow" : "text-white"
+              } hover:text-themeYellow px-4 py-2 font-bold`
             }
           >
             Contact
           </NavLink>
-          <a href="#" className="text-white hover:text-gray-300">
-            Services
-          </a>
         </div>
         <div className="flex justify-between items-center space-x-4 ">
           <div>
-            <SearchIcon className="text-white hover:text-yellow-300" />
+            <SearchIcon className="text-white hover:text-themeYellow" />
           </div>
           <div>
-            <PersonIcon className="text-white hover:text-yellow-300" />
+            <PersonIcon className="text-white hover:text-themeYellow" />
           </div>
         </div>
       </div>
