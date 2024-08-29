@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         themeYellow: "#D96C2C",
       },
+      fontFamily: {
+        "shadows-light": ['"Shadows Into Light"', "cursive"], // Add the custom font
+      },
     },
   },
   plugins: [],
