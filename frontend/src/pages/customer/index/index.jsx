@@ -37,7 +37,7 @@ const Index = () => {
               alt=""
               className="h-screen w-screen object-cover"
             />
-            <div className="absolute top-72 left-44 z-10">
+            <div className="absolute top-60 left-44 z-10">
               <p className="text-themeYellow font-shadows-light font-bold text-4xl">
                 Action Movie
               </p>
@@ -51,12 +51,12 @@ const Index = () => {
                 Written and Directed by Ian Calica / Phillipines 2024
               </p>
             </div>
-            <div className="flex justify-between items-center absolute bottom-20 left-44">
-              <button className="bg-white mr-16 text-black px-6 py-3 text-lg font-semibold border border-gray-300 rounded hover:bg-gray-100">
+            <div className="flex justify-between items-center absolute bottom-36 left-44">
+              <button className="bg-white mr-10 text-black px-12 py-3 text-lg  font-mono hover:bg-themeYellow hover:text-white">
                 More Info
               </button>
 
-              <button className="bg-themeYellow text-white px-8 py-4 text-xl font-bold rounded hover:bg-white hover:text-black">
+              <button className="bg-themeYellow text-white px-12 py-4 font-mono hover:bg-white hover:text-black text-sm">
                 Buy Ticket
               </button>
             </div>
