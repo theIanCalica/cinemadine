@@ -37,16 +37,28 @@ const Index = () => {
               alt=""
               className="h-screen w-screen object-cover"
             />
-            <div className="absolute top-80 left-44 z-10">
+            <div className="absolute top-72 left-44 z-10">
               <p className="text-themeYellow font-shadows-light font-bold text-4xl">
                 Action Movie
               </p>
               <h1
-                className="text-white font-bold text-7xl text-left mb-4 font-sans  hover:text-themeYellow"
-                style={{ transition: "color 0.3s ease-in-out", width: "500px" }}
+                className="text-white font-bold text-8xl text-left mb-4 font-mono  hover:text-themeYellow"
+                style={{ transition: "color 0.3s ease-in-out", width: "550px" }}
               >
                 Deadpool & Wolverine
               </h1>
+              <p className="text-white text-left text-lg font-sans  ">
+                Written and Directed by Ian Calica / Phillipines 2024
+              </p>
+            </div>
+            <div className="flex justify-between items-center absolute bottom-20 left-44">
+              <button className="bg-white mr-16 text-black px-6 py-3 text-lg font-semibold border border-gray-300 rounded hover:bg-gray-100">
+                More Info
+              </button>
+
+              <button className="bg-themeYellow text-white px-8 py-4 text-xl font-bold rounded hover:bg-white hover:text-black">
+                Buy Ticket
+              </button>
             </div>
           </SwiperSlide>
           <SwiperSlide className="text-center">
