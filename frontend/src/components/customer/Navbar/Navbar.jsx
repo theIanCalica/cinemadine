@@ -132,6 +132,9 @@ const Navbar = () => {
           </NavLink>
           <div className="flex space-x-4 mt-4">
             <SearchIcon className="hover:text-themeYellow" />
+            {/* <NavLink to="/login">
+
+            </NavLink> */}
             <PersonIcon className="hover:text-themeYellow" />
           </div>
         </div>

@@ -52,11 +52,23 @@ const Index = () => {
               </p>
             </div>
             <div className="flex justify-between items-center absolute bottom-36 left-44">
-              <button className="bg-white mr-10 text-black px-12 py-3 text-lg  font-mono hover:bg-themeYellow hover:text-white">
+              <button
+                className="bg-white mr-10 text-black px-12 py-3 text-lg  font-mono hover:bg-themeYellow hover:text-white"
+                style={{
+                  transition:
+                    "color 0.3s ease-in-out, background-color 0.3s ease-in-out",
+                }}
+              >
                 More Info
               </button>
 
-              <button className="bg-themeYellow text-white px-12 py-4 font-mono hover:bg-white hover:text-black text-sm">
+              <button
+                className="bg-themeYellow text-white px-12 py-4 font-mono hover:bg-white hover:text-black text-sm"
+                style={{
+                  transition:
+                    "color 0.3s ease-in-out, background-color 0.3s ease-in-out",
+                }}
+              >
                 Buy Ticket
               </button>
             </div>
@@ -67,6 +79,41 @@ const Index = () => {
               alt=""
               className="h-screen w-screen object-cover"
             />
+            <div className="absolute top-60 right-44 z-10">
+              <p className="text-themeYellow font-shadows-light font-bold text-4xl">
+                Children's Film
+              </p>
+              <h1
+                className="text-white font-bold text-8xl text-left mb-4 font-mono  hover:text-themeYellow"
+                style={{ transition: "color 0.3s ease-in-out", width: "550px" }}
+              >
+                Inside Out Part 2
+              </h1>
+              <p className="text-white text-left text-lg font-sans  ">
+                Written and Directed by Ian Calica / Phillipines 2024
+              </p>
+            </div>
+            <div className="flex justify-between items-center absolute bottom-36 right-80">
+              <button
+                className="bg-white mr-10 text-black px-12 py-3 text-lg  font-mono hover:bg-themeYellow hover:text-white"
+                style={{
+                  transition:
+                    "color 0.3s ease-in-out, background-color 0.3s ease-in-out",
+                }}
+              >
+                More Info
+              </button>
+
+              <button
+                className="bg-themeYellow text-white px-12 py-4 font-mono hover:bg-white hover:text-black text-sm"
+                style={{
+                  transition:
+                    "color 0.3s ease-in-out, background-color 0.3s ease-in-out",
+                }}
+              >
+                Buy Ticket
+              </button>
+            </div>
           </SwiperSlide>
           <SwiperSlide className="text-center">
             <img
