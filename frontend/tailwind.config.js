@@ -7,7 +7,7 @@ module.exports = {
         themeYellow: "#D96C2C",
       },
       fontFamily: {
-        "shadows-light": ['"Shadows Into Light"', "cursive"], // Add the custom font
+        "shadows-light": ['"Shadows Into Light"', "cursive"], //Font for genre of the movie in hero section
       },
     },
   },
