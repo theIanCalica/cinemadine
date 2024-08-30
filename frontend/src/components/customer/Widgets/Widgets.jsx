@@ -2,6 +2,8 @@ import React from "react";
 import StadiumIcon from "@mui/icons-material/Stadium";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import TheatersIcon from "@mui/icons-material/Theaters";
+import "./Widget.scss";
+import filmstripImage from "../../../assets/images/filmstrip.png";
 const Widgets = ({ type }) => {
   let data;
   switch (type) {
@@ -51,8 +53,17 @@ const Widgets = ({ type }) => {
       break;
   }
   return (
-    <div className="widgets">
-      <div></div>
+    <div className="widget mx-2 flex justify-center items-center  relative bg-black h-48 w-full">
+      <img
+        src={filmstripImage}
+        className="absolute inset-0 m-auto object-cover w-1/2 h-1/2 z-0 opacity-15"
+        alt="Filmstrip"
+      />
+      <div className="relative z-10 text-white text-center">
+        <h1 className="text-xl font-bold">{data?.title}</h1>
+        <p className="text-sm">{data?.subtitle}</p>
+      </div>
+      <div className="relative z-10">{data?.icon}</div>
     </div>
   );
 };

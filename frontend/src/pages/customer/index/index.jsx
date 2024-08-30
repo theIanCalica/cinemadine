@@ -11,6 +11,7 @@ import "swiper/css/autoplay"; // This import can be removed if you're including 
 import { Navigation, Scrollbar, A11y, Autoplay } from "swiper/modules";
 
 import Navbar from "../../../components/customer/Navbar/Navbar";
+import Widget from "../../../components/customer/Widgets/Widgets";
 import Footer from "../../../components/customer/Footer/Footer";
 import "./Index.scss";
 const Index = () => {
@@ -208,6 +209,11 @@ const Index = () => {
         {/* Film Strip */}
         <hr class="broken-hr"></hr>
         {/* Widgets */}
+        <div className="flex mt-11 mx-10">
+          <Widget type="Festival" />
+          <Widget type="Festival" />
+          <Widget type="Festival" />
+        </div>
       </div>
     </div>
   );
