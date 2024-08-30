@@ -4,6 +4,7 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import TheatersIcon from "@mui/icons-material/Theaters";
 import "./Widget.scss";
 import filmstripImage from "../../../assets/images/filmstrip.png";
+
 const Widgets = ({ type }) => {
   let data;
   switch (type) {
@@ -59,11 +60,15 @@ const Widgets = ({ type }) => {
         className="absolute inset-0 m-auto object-cover w-1/2 h-1/2 z-0 opacity-15"
         alt="Filmstrip"
       />
-      <div className="relative z-10 text-white text-center">
-        <h1 className="text-xl font-bold">{data?.title}</h1>
-        <p className="text-sm">{data?.subtitle}</p>
+      <div className="text-white flex justify-between flex-row gap-16 p-8">
+        <div className="left">
+          <p className="text-sm text-gray-500 font-serif ">{data.subtitle}</p>
+          <h1 className="text-4xl font-bold font-mono">{data.title}</h1>
+        </div>
+        <div className="bg-themeYellow icon  flex items-center justify-center">
+          {data.icon}
+        </div>
       </div>
-      <div className="relative z-10">{data?.icon}</div>
     </div>
   );
 };

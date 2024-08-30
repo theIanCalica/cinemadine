@@ -2,13 +2,41 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const articleSchema = new Schema({
-  title: {
-    type: String,
-    required: true,
+// Define the schema or attributes of a model
+const articleSchema = new Schema(
+  {
+    _id: {
+      type: Number,
+      required: true,
+      unique: true, // Ensures the ID is unique
+      index: true, // Indexes the ID for faster queries
+    },
+    title: {
+      type: String,
+      required: true,
+      trim: true, // Removes extra spaces from the beginning and end of the string
+      maxlength: 255, // Optional: Limits the length of the title
+    },
+    body: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: Date,
+      default: Date.now,
+      index: true, // Indexes the date field for faster queries
+    },
+    hidden: {
+      type: Boolean,
+      default: false, // Optional: Default value for the hidden field
+    },
   },
-  body: {
-    type: String,
-    required: true,
-  },
-});
+  {
+    timestamps: true, // Adds `createdAt` and `updatedAt` fields automatically
+  }
+);
+
+// Create the model
+const Article = mongoose.model("Article", articleSchema);
+
+module.exports = Article;

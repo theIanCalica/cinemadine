@@ -211,8 +211,8 @@ const Index = () => {
         {/* Widgets */}
         <div className="flex mt-11 mx-10">
           <Widget type="Festival" />
-          <Widget type="Festival" />
-          <Widget type="Festival" />
+          <Widget type="filmAward" />
+          <Widget type="unmissable" />
         </div>
       </div>
     </div>
