@@ -207,6 +207,7 @@ const Index = () => {
         </Swiper>
         {/* Film Strip */}
         <hr class="broken-hr"></hr>
+        {/* Widgets */}
       </div>
     </div>
   );
