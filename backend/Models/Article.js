@@ -33,6 +33,7 @@ const articleSchema = new Schema(
   },
   {
     timestamps: true, // Adds `createdAt` and `updatedAt` fields automatically
+    collection: "articles",
   }
 );
 

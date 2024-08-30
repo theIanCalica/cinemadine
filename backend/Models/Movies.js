@@ -42,6 +42,7 @@ const MoviesSchema = new Schema(
   },
   {
     timestamps: true,
+    collection: "movies",
   }
 );
 
