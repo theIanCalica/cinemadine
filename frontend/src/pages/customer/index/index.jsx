@@ -12,12 +12,13 @@ import { Navigation, Scrollbar, A11y, Autoplay } from "swiper/modules";
 
 import Navbar from "../../../components/customer/Navbar/Navbar";
 import Footer from "../../../components/customer/Footer/Footer";
-
+import "./Index.scss";
 const Index = () => {
   return (
     <div className="home">
       <div className="homeContainer">
         <Navbar />
+        {/* Hero Section */}
         <Swiper
           spaceBetween={0}
           slidesPerView={1}
@@ -37,6 +38,7 @@ const Index = () => {
               alt=""
               className="h-screen w-screen object-cover"
             />
+            <div class="absolute inset-0 bg-black opacity-30"></div>
             <div className="absolute top-60 left-44 z-10">
               <p className="text-themeYellow font-shadows-light font-bold text-4xl">
                 Action Movie
@@ -79,6 +81,7 @@ const Index = () => {
               alt=""
               className="h-screen w-screen object-cover"
             />
+            <div class="absolute inset-0 bg-black opacity-30"></div>
             <div className="absolute top-60 right-44 z-10">
               <p className="text-themeYellow font-shadows-light font-bold text-4xl">
                 Children's Film
@@ -121,6 +124,7 @@ const Index = () => {
               alt=""
               className="h-screen w-screen object-cover"
             />
+            <div class="absolute inset-0 bg-black opacity-30"></div>
             <div className="absolute top-60 left-44 z-10">
               <p className="text-themeYellow font-shadows-light font-bold text-4xl">
                 Children's Film
@@ -163,6 +167,7 @@ const Index = () => {
               alt=""
               className="h-screen w-screen object-cover"
             />
+            <div class="absolute inset-0 bg-black opacity-30"></div>
             <div className="absolute top-60 right-44 z-10">
               <p className="text-themeYellow font-shadows-light font-bold text-4xl">
                 Children's Film
@@ -200,10 +205,8 @@ const Index = () => {
             </div>
           </SwiperSlide>
         </Swiper>
-        {/* 
-        <div className="h-screen">
-           
-        </div> */}
+        {/* Film Strip */}
+        <hr class="broken-hr"></hr>
       </div>
     </div>
   );
