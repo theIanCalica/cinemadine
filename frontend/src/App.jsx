@@ -9,6 +9,7 @@ import { CssBaseline } from "@mui/material";
 import SigninPage from "./pages/SigninPage";
 import HomePage from "./pages/customer/index/index";
 import AdminIndexPage from "./pages/admin/index/AdminIndexPage";
+import AboutPage from "./pages/customer/AboutPage";
 import "./main.css";
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/admin" element={<AdminIndexPage />} />
+        <Route path="/about" element={<AboutPage />}></Route>
       </Routes>
     </Router>
   );
