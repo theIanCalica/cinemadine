@@ -4,12 +4,6 @@ const Schema = mongoose.Schema;
 // Define the schema or attributes of a model
 const categorySchema = new Schema(
   {
-    _id: {
-      type: Number,
-      required: true,
-      unique: true,
-      index: true,
-    },
     name: {
       type: String,
       required: true,

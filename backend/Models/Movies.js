@@ -4,12 +4,6 @@ const Schema = mongoose.Schema;
 // Define the schema or attributes of a model
 const MoviesSchema = new Schema(
   {
-    _id: {
-      type: Number,
-      required: true,
-      unique: true,
-      index: true,
-    },
     genre: {
       type: Schema.Types.ObjectId,
       ref: "Genre", // Reference to the Genre model

@@ -3,12 +3,6 @@ const Schema = mongoose.Schema;
 
 const FoodSchema = new Schema(
   {
-    _id: {
-      type: Number,
-      required: true,
-      unique: true,
-      index: true,
-    },
     category: {
       type: Schema.Types.ObjectId,
       ref: "Category",

@@ -4,12 +4,6 @@ const Schema = mongoose.Schema;
 // Define the schema or attributes of a model
 const genreSchema = new Schema(
   {
-    _id: {
-      type: Number,
-      required: true,
-      unique: true, // Ensures the ID is unique
-      index: true, // Indexes the ID for faster queries
-    },
     name: {
       type: String,
       required: true,

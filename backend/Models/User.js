@@ -3,12 +3,6 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema(
   {
-    _id: {
-      type: Number,
-      required: true,
-      unique: true,
-      index: true,
-    },
     fname: {
       type: String,
       required: "First Name is required!",
