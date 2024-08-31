@@ -6,7 +6,7 @@ const categorySchema = new Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: "Name is required!",
       trim: true, // Removes extra spaces from the beginning and end of the string
       maxlength: 100, // Optional: Limits the length of the name
     },
