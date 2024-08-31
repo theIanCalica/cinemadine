@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import Navbar from "../../../components/customer/Navbar/Navbar";
 import Hero from "../../../components/customer/Hero/Hero";
 import "./ContactPage.scss";
+import { useForm } from "react-hook-form";
 
 const ContactPage = () => {
+  const form = useForm();
+  const { register } = form;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -55,6 +58,7 @@ const ContactPage = () => {
             placeholder="Name"
             value={formData.name}
             onChange={handleChange}
+            {...register("name")}
           />
           <input
             className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
@@ -64,24 +68,27 @@ const ContactPage = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
+            {...register("email")}
           />
           <input
             className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
             id="phone"
             name="phone"
-            type="tel"
+            type="text"
             placeholder="Phone Number"
             value={formData.phone}
             onChange={handleChange}
+            {...register("phone")}
           />
           <input
             className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-            id="phone"
-            name="phone"
-            type="tel"
+            id="subject"
+            name="subject"
+            type="text"
             placeholder="Subject"
             value={formData.subject}
             onChange={handleChange}
+            {...register("subject")}
           />
           <textarea
             name="body"
@@ -91,6 +98,7 @@ const ContactPage = () => {
             placeholder="Comment"
             value={formData.body}
             onChange={handleChange}
+            {...register("body")}
           ></textarea>
           <div className="col-span-2 flex justify-center">
             <button
@@ -101,6 +109,9 @@ const ContactPage = () => {
             </button>
           </div>
         </form>
+      </div>
+      <div>
+        <img src="" alt="" />
       </div>
     </div>
   );
