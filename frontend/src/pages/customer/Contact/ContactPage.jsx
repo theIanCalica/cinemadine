@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 
 const ContactPage = () => {
   const form = useForm();
-  const { register } = form;
+  const { register, handleSubmit } = form;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,13 +22,6 @@ const ContactPage = () => {
       ...formData,
       [name]: value,
     });
-  };
-
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can handle form submission here
-    console.log("Form Data Submitted: ", formData);
   };
 
   return (
@@ -58,7 +51,7 @@ const ContactPage = () => {
             placeholder="Name"
             value={formData.name}
             onChange={handleChange}
-            {...register("name")}
+            {...register("name", { required: true })}
           />
           <input
             className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
@@ -68,7 +61,13 @@ const ContactPage = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            {...register("email")}
+            {...register("email", {
+              required: true,
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Invalid email address",
+              },
+            })}
           />
           <input
             className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
@@ -78,7 +77,14 @@ const ContactPage = () => {
             placeholder="Phone Number"
             value={formData.phone}
             onChange={handleChange}
-            {...register("phone")}
+            {...register("phone", {
+              required: true,
+              pattern: {
+                value: /^(09\d{9})$/,
+                message:
+                  "Invalid phone number. Must start with 09 and contain 11 digits",
+              },
+            })}
           />
           <input
             className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
@@ -88,7 +94,7 @@ const ContactPage = () => {
             placeholder="Subject"
             value={formData.subject}
             onChange={handleChange}
-            {...register("subject")}
+            {...register("subject", { required: true })}
           />
           <textarea
             name="body"
@@ -98,7 +104,7 @@ const ContactPage = () => {
             placeholder="Comment"
             value={formData.body}
             onChange={handleChange}
-            {...register("body")}
+            {...register("body", { required: true })}
           ></textarea>
           <div className="col-span-2 flex justify-center">
             <button
