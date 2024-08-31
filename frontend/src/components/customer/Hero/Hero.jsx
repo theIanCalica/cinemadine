@@ -1,6 +1,17 @@
 import React from "react";
 
-const Hero = () => {
+const Hero = ({ type }) => {
+  let data = { title: "", subtitle: "" };
+  switch (type) {
+    case "Contact":
+      data = {
+        title: type,
+        subtitle: type,
+      };
+      break;
+    default:
+      break;
+  }
   return (
     <div className="container">
       <div>
@@ -12,9 +23,9 @@ const Hero = () => {
         />
         <div class="absolute inset-0 bg-black opacity-30"></div>
         <div className="absolute inset-0 mb-40 flex flex-col items-center justify-center text-center">
-          <p className="text-white">Home &gt; About</p>
-          <h1 className="text-5xl font-bold font-sans text-white mt-4">
-            About
+          <p className="text-white font-sans">Home &gt; {data.subtitle}</p>
+          <h1 className="text-5xl font-bold font-serif text-white mt-4">
+            {data.title}
           </h1>
         </div>
       </div>
