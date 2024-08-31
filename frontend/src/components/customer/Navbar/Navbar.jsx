@@ -13,7 +13,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-transparent absolute top-0 left-0 w-full z-10">
+    <nav
+      className="bg-transparent absolute top-0 left-0 w-full z-10 border-b  p-3"
+      style={{ borderColor: "#FFFFFF26", borderBottomWidth: "1px" }}
+    >
       <div className="flex container items-center justify-between mx-auto p-4">
         <div>
           <h1 className="text-white">Cinemadine</h1>
