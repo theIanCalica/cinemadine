@@ -86,7 +86,8 @@ const ContactPage = () => {
           <textarea
             name="body"
             id="body"
-            className=""
+            rows={5}
+            className="w-full col-span-2 bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
             placeholder="Comment"
             value={formData.body}
             onChange={handleChange}
@@ -94,9 +95,9 @@ const ContactPage = () => {
           <div className="col-span-2 flex justify-center">
             <button
               type="submit"
-              className="w-full bg-themeYellow text-white py-2 px-4 rounded-md hover:bg-white hover:text-themeYellow hover:border-themeYellow transition-colors duration-300 ease-in-out"
+              className="w-60 h-14 bg-themeYellow text-white border border-transparent hover:bg-white hover:text-themeYellow hover:border-themeYellow transition-colors duration-300 ease-in-out"
             >
-              Submit
+              Send a Message
             </button>
           </div>
         </form>
