@@ -1,27 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../../../components/customer/Navbar/Navbar";
 import Hero from "../../../components/customer/Hero/Hero";
 import "./ContactPage.scss";
 import { useForm } from "react-hook-form";
+import { DevTool } from "@hookform/devtools";
 
 const ContactPage = () => {
-  const form = useForm();
-  const { register, handleSubmit } = form;
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    body: "",
-  });
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors, touchedFields },
+  } = useForm();
 
-  // Handle input change
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+  // Handle form submission
+  const onSubmit = (data) => {
+    console.log("Form Data Submitted: ", data);
+    // You can handle form submission here
+  };
+
+  // Utility function to determine input border color
+  const getBorderColor = (fieldName) => {
+    if (errors[fieldName]) {
+      return "border-red-500";
+    } else if (touchedFields[fieldName]) {
+      return "border-green-500";
+    }
+    return "border-gray-200";
   };
 
   return (
@@ -38,74 +43,112 @@ const ContactPage = () => {
 
       {/* End of hero  */}
       {/* Contact us form */}
+      <DevTool control={control} />
       <div className="flex justify-center my-10">
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
           className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl w-full"
         >
-          <input
-            className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleChange}
-            {...register("name", { required: true })}
-          />
-          <input
-            className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-            id="email"
-            name="email"
-            type="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            {...register("email", {
-              required: true,
-              pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Invalid email address",
-              },
-            })}
-          />
-          <input
-            className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-            id="phone"
-            name="phone"
-            type="text"
-            placeholder="Phone Number"
-            value={formData.phone}
-            onChange={handleChange}
-            {...register("phone", {
-              required: true,
-              pattern: {
-                value: /^(09\d{9})$/,
-                message:
-                  "Invalid phone number. Must start with 09 and contain 11 digits",
-              },
-            })}
-          />
-          <input
-            className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-            id="subject"
-            name="subject"
-            type="text"
-            placeholder="Subject"
-            value={formData.subject}
-            onChange={handleChange}
-            {...register("subject", { required: true })}
-          />
-          <textarea
-            name="body"
-            id="body"
-            rows={5}
-            className="w-full col-span-2 bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-            placeholder="Comment"
-            value={formData.body}
-            onChange={handleChange}
-            {...register("body", { required: true })}
-          ></textarea>
+          <div className="w-full mb-3">
+            <input
+              className={`w-full bg-gray-200 text-black border rounded py-3 px-4 ${getBorderColor(
+                "name"
+              )}`}
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Name"
+              {...register("name", { required: "Name is required" })}
+            />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+            )}
+          </div>
+
+          <div className="w-full mb-3">
+            <input
+              className={`w-full bg-gray-200 text-black border rounded py-3 px-4 ${getBorderColor(
+                "email"
+              )}`}
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Email"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Invalid email address",
+                },
+              })}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-full mb-3">
+            <input
+              className={`w-full bg-gray-200 text-black border rounded py-3 px-4 ${getBorderColor(
+                "phone"
+              )}`}
+              id="phone"
+              name="phone"
+              type="text"
+              maxLength={11}
+              placeholder="Phone Number"
+              {...register("phone", {
+                required: "Phone number is required",
+                pattern: {
+                  value: /^(09\d{9})$/,
+                  message:
+                    "Invalid phone number. Must start with 09 and contain 11 digits",
+                },
+              })}
+            />
+            {errors.phone && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.phone.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-full mb-3">
+            <input
+              className={`w-full bg-gray-200 text-black border rounded py-3 px-4 ${getBorderColor(
+                "subject"
+              )}`}
+              id="subject"
+              name="subject"
+              type="text"
+              placeholder="Subject"
+              {...register("subject", { required: "Subject is required" })}
+            />
+            {errors.subject && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.subject.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-full mb-3 col-span-2">
+            <textarea
+              name="body"
+              id="body"
+              rows={5}
+              className={`w-full bg-gray-200 text-black border rounded py-3 px-4 ${getBorderColor(
+                "body"
+              )}`}
+              placeholder="Comment"
+              {...register("body", { required: "Comment is required" })}
+            ></textarea>
+            {errors.body && (
+              <p className="text-red-500 text-sm mt-1">{errors.body.message}</p>
+            )}
+          </div>
+
           <div className="col-span-2 flex justify-center">
             <button
               type="submit"
