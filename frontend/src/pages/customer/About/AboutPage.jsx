@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <div className="container">
       <Navbar />
-      <Hero />
+      <Hero type="About" />
 
       <hr class="broken-hr"></hr>
     </div>
