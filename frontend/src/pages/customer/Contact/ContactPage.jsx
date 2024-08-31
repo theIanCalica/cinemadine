@@ -8,6 +8,8 @@ const ContactPage = () => {
     name: "",
     email: "",
     phone: "",
+    subject: "",
+    body: "",
   });
 
   // Handle input change
@@ -37,43 +39,66 @@ const ContactPage = () => {
           Feel Free to Write us Anytime
         </h1>
       </div>
+
+      {/* End of hero  */}
+      {/* Contact us form */}
       <div className="flex justify-center my-10">
         <form
           onSubmit={handleSubmit}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-lg w-full"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl w-full"
         >
           <input
-            class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-            id="company"
+            className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
+            id="name"
+            name="name"
             type="text"
-            placeholder="Tutsplus"
+            placeholder="Name"
+            value={formData.name}
+            onChange={handleChange}
           />
           <input
-            type="email"
+            className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
             id="email"
             name="email"
+            type="email"
+            placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Email"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-            required
           />
           <input
-            type="tel"
+            className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
             id="phone"
             name="phone"
+            type="tel"
+            placeholder="Phone Number"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="Phone Number"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-            required
           />
-          <button
-            type="submit"
-            className="col-span-2 w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-          >
-            Submit
-          </button>
+          <input
+            className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="Subject"
+            value={formData.subject}
+            onChange={handleChange}
+          />
+          <textarea
+            name="body"
+            id="body"
+            className=""
+            placeholder="Comment"
+            value={formData.body}
+            onChange={handleChange}
+          ></textarea>
+          <div className="col-span-2 flex justify-center">
+            <button
+              type="submit"
+              className="w-full bg-themeYellow text-white py-2 px-4 rounded-md hover:bg-white hover:text-themeYellow hover:border-themeYellow transition-colors duration-300 ease-in-out"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>
