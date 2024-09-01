@@ -4,7 +4,7 @@ import Hero from "../../../components/customer/Hero/Hero";
 import "./ContactPage.scss";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
-
+import axios from "axios";
 const ContactPage = () => {
   const {
     register,
@@ -14,9 +14,20 @@ const ContactPage = () => {
   } = useForm();
 
   // Handle form submission
-  const onSubmit = (data) => {
-    console.log("Form Data Submitted: ", data);
-    // You can handle form submission here
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post("/api/contact", data);
+      if (response.status === 200) {
+        console.log("Form Data Submitted Successfully:", response.data);
+        alert("Message sent successfully!");
+      } else {
+        console.error("Form submission error:", response);
+        alert("There was an error submitting the form.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("There was an error submitting the form.");
+    }
   };
 
   // Utility function to determine input border color
