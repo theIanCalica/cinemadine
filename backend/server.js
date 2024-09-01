@@ -1,9 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const articleRoutes = require("./routes/articles");
 const morgan = require("morgan");
 const cors = require("cors");
+
+// Include routes
+const articleRoutes = require("./routes/articles");
+const ContactRoutes = require("./routes/Contacts");
 
 // express app
 const app = express();
@@ -13,7 +16,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/articles", articleRoutes);
-
+app.use("/api/contacts", ContactRoutes);
 mongoose
   .connect(process.env.MONG_URL)
   .then(() => {
