@@ -7,7 +7,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay"; // This import can be removed if you're including Autoplay in the module imports
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Navigation, Scrollbar, A11y, Autoplay } from "swiper/modules";
 
 import Navbar from "../../../components/customer/Navbar/Navbar";

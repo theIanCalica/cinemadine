@@ -5,11 +5,15 @@ import "./ContactPage.scss";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ContactPage = () => {
   const {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors, touchedFields },
   } = useForm();
 
@@ -21,16 +25,40 @@ const ContactPage = () => {
         data
       );
       if (response.status === 201) {
-        // Typically, a successful POST request returns a 201 status code
+        reset();
         console.log("Form Data Submitted Successfully:", response.data);
-        alert("Message sent successfully!");
+        toast.success("Message sent successfully!", {
+          position: "top-right",
+          autoClose: 5000, // Time in milliseconds for the toast to auto-close
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+        });
       } else {
         console.error("Form submission error:", response);
-        alert("There was an error submitting the form.");
+        toast.error("There was an error submitting the form.", {
+          position: "top-right",
+          autoClose: 5000, // Time in milliseconds for the toast to auto-close
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+        });
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      alert("There was an error submitting the form.");
+      toast.error("There was an error submitting the form.", {
+        position: "top-right",
+        autoClose: 5000, // Time in milliseconds for the toast to auto-close
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      });
     }
   };
 
@@ -177,6 +205,17 @@ const ContactPage = () => {
       <div>
         <img src="" alt="" />
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        theme="light"
+      />
     </div>
   );
 };
