@@ -16,8 +16,12 @@ const ContactPage = () => {
   // Handle form submission
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("/api/contact", data);
-      if (response.status === 200) {
+      const response = await axios.post(
+        "http://localhost:4000/api/contacts",
+        data
+      );
+      if (response.status === 201) {
+        // Typically, a successful POST request returns a 201 status code
         console.log("Form Data Submitted Successfully:", response.data);
         alert("Message sent successfully!");
       } else {
