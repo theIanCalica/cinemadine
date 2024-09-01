@@ -14,6 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Add Contact
 router.post("/", async (req, res) => {
   const { name, email, phone, subject, body } = req.body;
   try {
