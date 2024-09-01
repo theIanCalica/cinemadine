@@ -5,9 +5,11 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 // Include routes
-const articleRoutes = require("./routes/articles");
-const ContactRoutes = require("./routes/Contacts");
+const articleRoutes = require("./routes/Article");
+const ContactRoutes = require("./routes/Contact");
 const GenreRoutes = require("./routes/Genre");
+const CategoryRoutes = require("./routes/Category");
+
 // express app
 const app = express();
 app.use(cors());
@@ -18,6 +20,7 @@ app.use(express.json());
 app.use("/api/articles", articleRoutes);
 app.use("/api/contacts", ContactRoutes);
 app.use("/api/genres", GenreRoutes);
+app.use("/api/categories", CategoryRoutes);
 
 mongoose
   .connect(process.env.MONG_URL)
