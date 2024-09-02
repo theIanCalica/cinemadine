@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cors = require("cors");
+const nodemailer = require("nodemailer");
 
 // Include routes
 const articleRoutes = require("./routes/Article");

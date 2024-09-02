@@ -202,8 +202,13 @@ const ContactPage = () => {
           </div>
         </form>
       </div>
-      <div>
-        <img src="" alt="" />
+      <div className="h-80 ">
+        <img
+          src="/images/upuan.jpg"
+          className="w-screen 0bject-cover "
+          style={{ opacity: "0.2", height: "60vh" }}
+          alt=""
+        />
       </div>
       <ToastContainer
         position="top-right"

@@ -11,6 +11,7 @@ import HomePage from "./pages/customer/index/index";
 import AdminIndexPage from "./pages/admin/index/AdminIndexPage";
 import AboutPage from "./pages/customer/About/AboutPage";
 import ContactPage from "./pages/customer/Contact/ContactPage";
+import Email from "./pages/Emails/ContactUs";
 import "./main.css";
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/admin" element={<AdminIndexPage />} />
         <Route path="/about" element={<AboutPage />}></Route>
         <Route path="/contact" element={<ContactPage />}></Route>
+        <Route path="/email" element={<Email />} />
       </Routes>
     </Router>
   );
